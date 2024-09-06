@@ -27,18 +27,16 @@ namespace BankAccountManager.Entities
             {
                 throw new DomainException("Account balance is zero.");
             }
-            else if (Balance < amount)
+            if (Balance < amount)
             {
                 throw new DomainException("Withdraw error: Not enough balance");
             }
-            else if (amount > WithdrawLimit)
+            if (amount > WithdrawLimit)
             {
                 throw new DomainException("Withdraw error: The amount exceeds withdraw limit.");
             }
-            else
-            {
-                Balance -= amount;
-            }
+
+            Balance -= amount; 
         }
 
     }
