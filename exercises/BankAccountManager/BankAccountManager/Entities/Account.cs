@@ -35,6 +35,11 @@ namespace BankAccountManager.Entities
             {
                 throw new DomainException("Withdraw error: The amount exceeds withdraw limit.");
             }
+            else
+            {
+                Balance -= amount;
+            }
         }
+
     }
 }

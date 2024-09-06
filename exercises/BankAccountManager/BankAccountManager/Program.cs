@@ -1,5 +1,6 @@
 ﻿using BankAccountManager.Entities;
 using BankAccountManager.Entities.Exceptions;
+using System.Globalization;
 
 
 try
@@ -20,6 +21,7 @@ try
     double withdrawAmount = double.Parse(Console.ReadLine());
 
     acc1.Withdraw(withdrawAmount);
+    Console.WriteLine($"New balance: {acc1.Balance.ToString("F2", CultureInfo.InvariantCulture)}");
 }
 catch (DomainException e)
 {
